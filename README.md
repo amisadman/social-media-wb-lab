@@ -2,7 +2,7 @@
 
 Welcome to Catgram — a small, server-rendered PHP application that demonstrates a minimal MVC architecture with user authentication, posts (with image uploads), search, and a simple dashboard.
 
-![Catgram logo](public/assets/logo.png)
+![Catgram logo](public/assets/image.png)
 
 Quick highlights:
 
