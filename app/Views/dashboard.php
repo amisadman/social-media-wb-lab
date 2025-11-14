@@ -37,6 +37,18 @@ ob_start();
               <p class="font-bold text-[var(--cat-dark)]"><?= htmlspecialchars($post['name']) ?></p>
               <p class="text-xs text-gray-500 mt-1"><?= date('M d, Y \a\t H:i', strtotime($post['created_at'])) ?></p>
             </div>
+            
+            <!-- Delete Button (only show if user owns the post) -->
+            <?php if (isset($user) && $user['id'] == $post['user_id']): ?>
+              <form method="POST" action="/post/delete" class="delete-form" onsubmit="return confirmDelete()">
+                <input type="hidden" name="post_id" value="<?= $post['id'] ?>">
+                <button type="submit" class="text-red-500 hover:text-red-700 transition-colors" title="Delete Post">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+              </form>
+            <?php endif; ?>
           </div>
         </div>
 
@@ -66,7 +78,6 @@ ob_start();
             <img src="/assets/dislike.png" alt="dislike" class="w-6 h-6" />
             <span class="dislike-count"><?= (int)($post['dislikes'] ?? 0) ?></span>
           </button>
-
         </div>
       </div>
     <?php endforeach; ?>
@@ -77,6 +88,25 @@ ob_start();
     </div>
   <?php endif; ?>
 </div>
+
+<script>
+function confirmDelete() {
+    return confirm('Are you sure you want to delete this post? This action cannot be undone.');
+}
+
+// Optional: Add event listeners for better UX
+document.addEventListener('DOMContentLoaded', function() {
+    const deleteForms = document.querySelectorAll('.delete-form');
+    
+    deleteForms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            if (!confirmDelete()) {
+                e.preventDefault();
+            }
+        });
+    });
+});
+</script>
 
 <?php
 $content = ob_get_clean();

@@ -50,12 +50,12 @@ $router->get('/dashboard', fn() => $dash->index());
 // ---- Post Routes ----
 $router->get('/post/create', fn() => $post->create());  // shows create_post.php
 $router->post('/post/create', fn() => $post->create()); // handles form submission
+$router->post('/post/delete', fn() => $post->delete()); // handles form submission
 
 
 $router->get('/search', fn() => $search->search());
 
 // Vote endpoint
 $router->post('/vote', fn() => $vote->vote());
-
 // ---- Dispatch ----
 $router->dispatch($_SERVER['REQUEST_URI'] ?? '/', $_SERVER['REQUEST_METHOD'] ?? 'GET');
