@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'authboard/project',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '11f1166a9c6e9e193e53fd0cd7fb2ea98519e14a',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'authboard/project' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '11f1166a9c6e9e193e53fd0cd7fb2ea98519e14a',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
