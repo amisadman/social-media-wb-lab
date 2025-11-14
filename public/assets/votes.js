@@ -30,17 +30,33 @@ document.addEventListener("click", function (e) {
         if (likeEl) likeEl.textContent = data.likes;
         if (dislikeEl) dislikeEl.textContent = data.dislikes;
 
-        // update 'Your vote' text
         let voteTextEl = postEl.querySelector(".your-vote-text");
         if (!voteTextEl) {
           voteTextEl = document.createElement("span");
           voteTextEl.className = "your-vote-text text-xs text-gray-500";
-          postEl.querySelector(".flex-1").appendChild(voteTextEl);
         }
-        if (data.user_vote === 1) voteTextEl.textContent = "Your vote: Liked";
-        else if (data.user_vote === -1)
-          voteTextEl.textContent = "Your vote: Disliked";
-        else voteTextEl.textContent = "";
+
+    
+        const likeContainer = postEl.querySelector(".like");
+        const dislikeContainer = postEl.querySelector(".dislike");
+        
+        
+        if (likeContainer.contains(voteTextEl)) {
+          likeContainer.removeChild(voteTextEl);
+        }
+        if (dislikeContainer.contains(voteTextEl)) {
+          dislikeContainer.removeChild(voteTextEl);
+        }
+
+        if (data.user_vote === 1) {
+          voteTextEl.textContent = "Your Vote: Paws Up!";
+          likeContainer.appendChild(voteTextEl);
+        } else if (data.user_vote === -1) {
+          voteTextEl.textContent = "Your Vote: Paws Down!";
+          dislikeContainer.appendChild(voteTextEl);
+        } else {
+          voteTextEl.textContent = "";
+        }
       }
     })
     .catch(async (err) => {
