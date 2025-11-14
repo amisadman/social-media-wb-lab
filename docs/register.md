@@ -1,4 +1,4 @@
-# Register (Detailed)
+# Register
 
 This document explains the registration flow and how passwords are hashed and stored.
 

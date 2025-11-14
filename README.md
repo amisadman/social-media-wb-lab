@@ -106,13 +106,13 @@ php -S localhost:8000
 
 Thanks for wanting to contribute! See the `docs/` folder for detailed developer documentation:
 
-- `docs/how-catgram-works.md` — architecture and flow
-- `docs/login.md` — login flow and code snippets
-- `docs/register.md` — registration flow and code snippets
-- `docs/post.md` — post upload and storage details
-- `docs/dashboard.md` — dashboard flow and post rendering
-- `docs/search.md` — search implementation
-- `docs/design-docs.md` — brand guidelines (colors, fonts, components)
+- `docs/how-catgram-works.md`(docs/how-catgram-works.md) — architecture and flow
+- `docs/login.md`(docs/login.md) — login flow and code snippets
+- `docs/register.md`(docs/register.md) — registration flow and code snippets
+- `docs/post.md`(docs/post.md) — post upload and storage details
+- `docs/dashboard.md`(docs/dashboard.md) — dashboard flow and post rendering
+- `docs/search.md`(docs/search.md) — search implementation
+- `docs/design-docs.md`(docs/design-docs.md) — brand guidelines (colors, fonts, components)
 
 Guidelines:
 
@@ -121,8 +121,6 @@ Guidelines:
 - Use prepared statements (PDO) in models to avoid SQL injection.
 - Keep styles in `public/assets/style.css` or Tailwind utility classes in views.
 
-If you'd like, I can add a `CONTRIBUTING.md` template or a `docs/README.md` that links these pages — tell me which you'd prefer.
-
 ## License
 
-This project is a small teaching/demo app. Add your preferred license if you plan to publish it.
+This project is a small demo app. Add your preferred license if you plan to publish it.

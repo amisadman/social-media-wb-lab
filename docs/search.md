@@ -1,4 +1,4 @@
-# Search (Detailed)
+# Search
 
 This document explains how the search feature works, where the code is, and how search queries are executed.
 

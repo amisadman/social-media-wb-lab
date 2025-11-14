@@ -1,4 +1,4 @@
-# Login (Detailed)
+# Login
 
 This document explains how login works, where the code is, and how credentials are validated and stored.
 

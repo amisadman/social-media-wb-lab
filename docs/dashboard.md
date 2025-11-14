@@ -1,6 +1,7 @@
-# Dashboard (Detailed)
+# Dashboard
 
 This document explains how the dashboard page works, how posts are fetched, and where to look for controller/view/model code.
+
 
 ## Flow summary
 

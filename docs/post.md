@@ -1,4 +1,4 @@
-# Post / Upload (Detailed)
+# Post / Upload
 
 This document explains how creating a post works, how uploads are handled, what is stored in the database, and where files live on disk.
 
