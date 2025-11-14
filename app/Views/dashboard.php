@@ -69,6 +69,7 @@ ob_start();
 
         <!-- Post Actions (Like/Dislike) -->
         <div class="px-6 py-4 flex items-center gap-4">
+          <div class="your-vote"></div>
           <button class="vote-btn flex items-center justify-center gap-2 flex-1 py-2 rounded-lg hover:bg-gray-100 transition font-medium" data-post-id="<?= $post['id'] ?>" data-value="1" title="Like">
             <img src="/assets/like.png" alt="like" class="w-6 h-6" />
             <span class="like-count"><?= (int)($post['likes'] ?? 0) ?></span>
