@@ -106,13 +106,13 @@ php -S localhost:8000
 
 Thanks for wanting to contribute! See the `docs/` folder for detailed developer documentation:
 
-- `docs/how-catgram-works.md`(docs/how-catgram-works.md) — architecture and flow
-- `docs/login.md`(docs/login.md) — login flow and code snippets
-- `docs/register.md`(docs/register.md) — registration flow and code snippets
-- `docs/post.md`(docs/post.md) — post upload and storage details
-- `docs/dashboard.md`(docs/dashboard.md) — dashboard flow and post rendering
-- `docs/search.md`(docs/search.md) — search implementation
-- `docs/design-docs.md`(docs/design-docs.md) — brand guidelines (colors, fonts, components)
+- `docs/how-catgram-works.md`(./docs/how-catgram-works.md) — architecture and flow
+- `docs/login.md`(./docs/login.md) — login flow and code snippets
+- `docs/register.md`(./docs/register.md) — registration flow and code snippets
+- `docs/post.md`(./docs/post.md) — post upload and storage details
+- `docs/dashboard.md`(./docs/dashboard.md) — dashboard flow and post rendering
+- `docs/search.md`(./docs/search.md) — search implementation
+- `docs/design-docs.md`(./docs/design-docs.md) — brand guidelines (colors, fonts, components)
 
 Guidelines:
 

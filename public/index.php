@@ -24,6 +24,7 @@ use App\Controllers\AuthController;
 use App\Controllers\DashboardController;
 use App\Controllers\PostController;
 use \App\Controllers\SearchController;
+use App\Controllers\VoteController;
 
 Session::start();
 
@@ -32,6 +33,7 @@ $auth = new AuthController();
 $dash = new DashboardController();
 $post = new PostController();
 $search = new SearchController();
+$vote = new VoteController();
 
 $router->get('/', fn() => include __DIR__ . '/../app/Views/home.php');
 $router->get('/home', fn() => include __DIR__ . '/../app/Views/home.php');
@@ -51,6 +53,9 @@ $router->post('/post/create', fn() => $post->create()); // handles form submissi
 
 
 $router->get('/search', fn() => $search->search());
+
+// Vote endpoint
+$router->post('/vote', fn() => $vote->vote());
 
 // ---- Dispatch ----
 $router->dispatch($_SERVER['REQUEST_URI'] ?? '/', $_SERVER['REQUEST_METHOD'] ?? 'GET');
