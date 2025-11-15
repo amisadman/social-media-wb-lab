@@ -52,4 +52,36 @@ class PostController extends Controller {
         // Show form
         $this->view('create_post.php', ['user' => $user]);
     }
+
+    // Delete a post
+    public function delete(): void
+    {
+        $user = Session::get('user');
+        if (!$user) {
+            header('Location: /login');
+            exit;
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $postId = (int)($_POST['post_id'] ?? 0);
+            
+            if ($postId > 0) {
+                // Delete the post (only if user owns it)
+                $success = Post::delete($postId, $user['id']);
+                
+                if ($success) {
+                    // Optional: Delete associated image file
+                    // You might want to implement this based on your needs
+                }
+            }
+
+            // Redirect back to dashboard
+            header('Location: /dashboard');
+            exit;
+        }
+
+        // If not POST request, redirect to dashboard
+        header('Location: /dashboard');
+        exit;
+    }
 }
